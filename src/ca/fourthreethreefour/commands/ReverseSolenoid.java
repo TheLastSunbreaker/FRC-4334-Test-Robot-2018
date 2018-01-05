@@ -3,7 +3,7 @@ package ca.fourthreethreefour.commands;
 import edu.first.command.Command;
 import edu.first.module.actuators.DualActionSolenoid;
 
-public final class ReverseSolenoid implements Command {
+public class ReverseSolenoid implements Command {
 	
 	private final DualActionSolenoid solenoid;
 	

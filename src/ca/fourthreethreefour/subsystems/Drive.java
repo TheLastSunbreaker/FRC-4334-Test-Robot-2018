@@ -16,7 +16,7 @@ public interface Drive {
 	VictorModuleGroup right = new VictorModuleGroup(new VictorModule[] { new VictorModule(0),
 			new VictorModule(1), new VictorModule(2) });
 	
-	Drivetrain drivetrain = new Drivetrain(new InversedSpeedController(left), right);
+	Drivetrain drivetrain = new Drivetrain( left, new InversedSpeedController(right));
 	
 	Function speedFunction = new Function() {
 		@Override

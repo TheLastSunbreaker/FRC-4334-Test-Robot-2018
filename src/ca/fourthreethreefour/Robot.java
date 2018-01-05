@@ -6,6 +6,7 @@ import edu.first.module.actuators.DualActionSolenoid;
 import edu.first.module.actuators.DualActionSolenoid.Direction;
 import edu.first.module.actuators.DualActionSolenoidModule;
 import edu.first.module.joysticks.XboxController;
+import edu.first.module.joysticks.BindingJoystick.ButtonBind;
 import edu.first.module.joysticks.BindingJoystick.DualAxisBind;
 import edu.first.module.subsystems.Subsystem;
 import edu.first.robot.IterativeRobotAdapter;
@@ -38,14 +39,17 @@ public class Robot extends IterativeRobotAdapter {
 			}
 		});
 		
+		//	Backup?		controller.addWhenPressedCommand(XboxController.RIGHT_BUMPER, new ReverseSolenoid(armSolenoid));
 		controller.addWhenPressed(XboxController.RIGHT_BUMPER, new ReverseSolenoid(armSolenoid));
+		//(XboxController.RIGHT_BUMPER, new ReverseSolenoid(armSolenoid
+		//controller.addDeadband(0, 0.1);
 	}
 	
 	@Override
 	public void initTeleoperated() {
 		ALL_MODULES.enable();
 		if (armSolenoid.get() == Direction.OFF) {
-			armSolenoid.set(DualActionSolenoid.Direction.LEFT);
+			armSolenoid.set(DualActionSolenoid.Direction.RIGHT);
 		}
 	}
 	
