@@ -38,7 +38,7 @@ public class Robot extends IterativeRobotAdapter {
 			}
 		});
 		
-		controller.addWhenPressed(XboxController.RIGHT_TRIGGER, new ReverseSolenoid(armSolenoid));
+		controller.addWhenPressed(XboxController.RIGHT_BUMPER, new ReverseSolenoid(armSolenoid));
 	}
 	
 	@Override
