@@ -10,13 +10,13 @@ import edu.first.module.subsystems.Subsystem;
 
 public interface Drive {
 	
-	VictorModuleGroup left = new VictorModuleGroup(new VictorModule[] { new VictorModule(4),
-			new VictorModule(5), new VictorModule(6) });
-	
-	VictorModuleGroup right = new VictorModuleGroup(new VictorModule[] { new VictorModule(0),
+	VictorModuleGroup left = new VictorModuleGroup(new VictorModule[] { new VictorModule(0),
 			new VictorModule(1), new VictorModule(2) });
 	
-	Drivetrain drivetrain = new Drivetrain( left, new InversedSpeedController(right));
+	VictorModuleGroup right = new VictorModuleGroup(new VictorModule[] { new VictorModule(4),
+			new VictorModule(5), new VictorModule(6) });
+	
+	Drivetrain drivetrain = new Drivetrain( new InversedSpeedController (left), right);
 	
 	Function speedFunction = new Function() {
 		@Override
